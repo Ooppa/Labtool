@@ -8,8 +8,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import fi.javalabra.labtool.domain.Customer;
-import fi.javalabra.labtool.repository.CustomerRepository;
+import fi.javalabra.labtool.repository.CourseRepository;
 
 /**
  *
@@ -22,9 +21,6 @@ public class LabtoolApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = SpringApplication.run(LabtoolApplication.class, args);
-        Customer pekka = new Customer("pella", "kallio");
-
-        ctx.getBean(CustomerRepository.class).save(pekka);
     }
     
 }
