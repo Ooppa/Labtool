@@ -7,7 +7,7 @@ labtool/target/
 hs_err_pid*
 
 #eclipse
-labtool/.project
-labtool/.classpath
-labtool/.settings/
-labtool/bin/
+.classpath
+.project
+.settings/
+bin/

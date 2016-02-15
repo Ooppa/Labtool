@@ -11,14 +11,17 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import fi.javalabra.labtool.repository.CourseRepository;
 
 /**
- *
- * @author Ooppa
+ * Spring-boot initializer.
  */
 @SpringBootApplication
 @ComponentScan("fi.javalabra.labtool")
 @EnableJpaRepositories("fi.javalabra.labtool.repository")
 public class LabtoolApplication {
-
+    
+    /**
+    * Main-method.
+    * @param args command line args
+    */
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = SpringApplication.run(LabtoolApplication.class, args);
     }
