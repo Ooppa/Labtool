@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -29,4 +30,7 @@ public class User {
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL}, mappedBy="user")
 	private Set<Registration> registrations;
+        
+        @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL}, mappedBy = "reviewer")
+        private Set<WeekFeedback> reviewsDone;
 }
