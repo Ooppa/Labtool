@@ -5,3 +5,8 @@
 *.ear
 labtool/target/
 hs_err_pid*
+.classpath
+.project
+.settings/
+bin/
+
