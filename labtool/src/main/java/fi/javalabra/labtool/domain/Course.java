@@ -1,6 +1,7 @@
 package fi.javalabra.labtool.domain;
 
-import java.util.Set;
+import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -15,17 +16,16 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "courses")
-public class Course {
-	
-	
-	@GeneratedValue
-	@Id
-	private Long id;
-	
-	private String period;
-	
-	private int year;
-	
-	@OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL}, mappedBy="course")
-	private Set<Registration> registrations;
+public class Course implements Serializable {
+
+    @GeneratedValue
+    @Id
+    private Long id;
+
+    private String period;
+
+    private int year;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL}, mappedBy="course")
+    private List<Registration> registrations;
 }

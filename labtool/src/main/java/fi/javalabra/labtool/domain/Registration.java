@@ -1,6 +1,8 @@
 package fi.javalabra.labtool.domain;
 
-import java.util.Set;
+import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -15,7 +17,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "registrations")
-public class Registration {
+public class Registration implements Serializable {
 	
 	@GeneratedValue
 	@Id
@@ -30,5 +32,5 @@ public class Registration {
 	private String repository;
         
         @OneToMany(mappedBy = "registration", cascade = CascadeType.ALL)
-        private Set<WeekFeedback> feedbacks;
+        private List<WeekFeedback> feedbacks;
 }
