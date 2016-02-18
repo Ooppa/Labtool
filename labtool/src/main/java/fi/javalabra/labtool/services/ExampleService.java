@@ -1,6 +1,10 @@
 package fi.javalabra.labtool.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import fi.javalabra.labtool.repository.CourseRepository;
 
 /**
  *
@@ -9,7 +13,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class ExampleService {
 
-    public String helloWorld() {
-        return "Hello World!";
-    }
+	@Autowired
+	CourseRepository repository;
+
+	public String helloWorld() {
+		return "Hello World!";
+	}
 }

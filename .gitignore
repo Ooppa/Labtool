@@ -5,8 +5,9 @@
 *.ear
 labtool/target/
 hs_err_pid*
+
+#eclipse
 .classpath
 .project
 .settings/
 bin/
-
