@@ -24,11 +24,13 @@ public class Registration {
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Course course;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private User user;
 	
-	private String repository;
+	private String repositoryURL;
+        
+        private RegistrationStatus status;
         
         @OneToMany(mappedBy = "registration", cascade = CascadeType.ALL)
-        private Set<WeekFeedback> feedbacks;
+        private Set<Submission> submissions;
 }

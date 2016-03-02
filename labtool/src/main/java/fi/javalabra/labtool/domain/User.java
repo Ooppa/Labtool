@@ -31,6 +31,4 @@ public class User {
 	@OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL}, mappedBy="user")
 	private Set<Registration> registrations;
         
-        @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL}, mappedBy = "reviewer")
-        private Set<WeekFeedback> reviewsDone;
 }

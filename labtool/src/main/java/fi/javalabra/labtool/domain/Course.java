@@ -28,4 +28,7 @@ public class Course {
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL}, mappedBy="course")
 	private Set<Registration> registrations;
+        
+        @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL}, mappedBy="deadline")
+        private Set<Deadline> deadlines;
 }

@@ -14,7 +14,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "feedbacks")
-public class WeekFeedback {
+public class Submission {
     
     @GeneratedValue
     @Id
@@ -22,13 +22,16 @@ public class WeekFeedback {
 
     private String week;
     
-    private int points;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Deadline deadline;
     
-    private String text; 
+    private double points;
+    
+    private String feedback; 
     
     @ManyToOne(fetch = FetchType.LAZY)
     private Registration registration;
     
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private User reviewer;
 }
